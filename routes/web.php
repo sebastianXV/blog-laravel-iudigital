@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
+use App\http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,28 +16,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function(){
-    return view('contact');
-});
-
-Route::get('/message', function(){
-    return "hello, Im using the laravel framework";
-});
-
-/* Ruta con parametro no opcional */
-Route::get('/message/{name}', function($name){
-    return "Hello, I'm $name";
-});
-
-/* Ruta con parametro opcional */
-Route::get('/message-v2/guest/{name?}', function($name = "Guest not identificated"){
-    return "Hello, I'm $name";
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/categories', CategoriesController::class);
