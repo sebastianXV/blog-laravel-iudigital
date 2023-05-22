@@ -14,21 +14,30 @@
                             </div>
                         @endif
 
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Modulo de post</h5>
-                                <p class="card-text">Crear publicaciones</p>
-                                <a href="#" class="btn btn-primary">Ir al modulo</a>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <img src="{{ asset('img/posts.jpg') }}" class="card-img-top" alt="Imagen 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Modulo de post</h5>
+                                        <p class="card-text">Crear publicaciones</p>
+                                        <a href="{{ route('posts.index') }}" class="btn btn-primary">Ver Publicaciones</a>
+                                        <a href="{{ route('posts.create') }}" class="btn btn-primary">Crear Publicación</a>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Modulo de categorias</h5>
-                                    <p class="card-text">Crear publicaciones</p>
-                                    <a href="#" class="btn btn-primary">Ir al modulo</a>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <img src="{{ asset('img/categorias.jpg') }}" class="card-img-top" alt="Imagen 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Modulo de categorias</h5>
+                                        <p class="card-text">Crear categorias</p>
+                                        <a href="{{ route('categories.index') }}" class="btn btn-primary">Ver Categorías</a>
+                                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Crear Categoría</a>
+                                    </div>
                                 </div>
+                            </div>
                         </div>
 
                     </div>
@@ -37,3 +46,11 @@
         </div>
     </div>
 @endsection
+
+
+
+
+
+
+
+

@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\http\Controllers\HomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\CategoryController;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +24,11 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/posts', PostController::class);
 Route::resource('/categories', CategoryController::class);
 
+// Rutas para el historial de registros
+Route::get('/posts/history', [PostController::class, 'history']);
+Route::get('/categories/history', [CategoryController::class, 'history']);
+
 Route::get('/', function () {
     return view('welcome');
 });
+

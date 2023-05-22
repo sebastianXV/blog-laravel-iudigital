@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
     /**
@@ -28,7 +28,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            // Otras reglas de validación
+        ]);
+
+        $category = Category::create($validatedData);
+
+        return redirect()->route('categories.show', $category->id);
     }
 
     /**
@@ -36,8 +43,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', compact('category'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
