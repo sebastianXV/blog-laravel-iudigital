@@ -1,15 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Category: {{ $category->title }}</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card mt-4">
+                    <div class="card-header">{{ $category->title }}</div>
 
-    <p>ID: {{ $category->id }}</p>
-    <!-- Otros detalles de la categoría -->
+                    <div class="card-body">
+                        <p>ID: {{ $category->id }}</p>
+                        <!-- Otros detalles de la categoría -->
 
-    <a href="{{ route('categories.edit', $category) }}">Edit</a>
-    <form action="{{ route('categories.destroy', $category) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Delete</button>
-    </form>
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-primary">Edit</a>
+
+                            <form action="{{ route('categories.destroy', $category) }}" method="POST"
+                                onsubmit="return confirm('Are you sure you want to delete this category?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
+
+

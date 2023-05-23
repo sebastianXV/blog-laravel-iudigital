@@ -12,13 +12,17 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="title">{{ __('Title') }}</label>
+                                <label for="title">{{ __('Titulo') }}</label>
                                 <input type="text" name="title" id="title" class="form-control" required>
                             </div>
 
-                            <!-- Otros campos del formulario -->
+                            <div class="form-group">
+                                <label for="slug">{{ __('Descripcion') }}</label>
+                                <input type="text" name="slug" id="slug" class="form-control" required>
+                            </div>
 
-                            <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 15px
+                            ">{{ __('Create') }}</button>
                         </form>
                     </div>
                 </div>
@@ -26,4 +30,6 @@
         </div>
     </div>
 @endsection
+
+
 

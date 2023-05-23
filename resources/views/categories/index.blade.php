@@ -10,41 +10,27 @@
                     <tr>
                         <th>Columna 1</th>
                         <th>Columna 2</th>
-                        <th>Columna 3</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                        <td class="align-top">Esta celda está alineada en la parte superior.</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">Editar</a>
-                            <form action="#" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Texto 1</td>
-                        <td>Texto 2</td>
-                        <td class="align-top">Esta celda está alineada en la parte superior.</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">Editar</a>
-                            <form action="#" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                            </form>
-                        </td>
-                    </tr>
+                    @foreach ($categories as $category)
+                        <tr>
+                            <td>{{ $category->title }}</td>
+                            <td>{{ $category->slug }}</td>
+                            <td>
+                                <a href="{{ route('categories.edit', $category) }}" class="btn btn-primary">Editar</a>
+                                <form action="{{ route('categories.destroy', $category) }}" method="POST"
+                                    onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 @endsection
-
-

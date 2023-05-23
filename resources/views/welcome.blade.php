@@ -13,7 +13,7 @@
         </div>
     @else
         <div class="jumbotron text-center">
-            <h1 class="display-4">Bienvenido al Mundo de los Videojuegos</h1>
+            <h1 class="display-4">Bienvenido a GameSpace</h1>
             <p class="lead">Explora, descubre y comparte tus experiencias en el mundo de los videojuegos.</p>
             <hr class="my-4">
             <p>Únete a nuestra comunidad y comparte tus reseñas, avances, trucos y más.</p>
