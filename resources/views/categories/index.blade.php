@@ -8,8 +8,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Columna 1</th>
-                        <th>Columna 2</th>
+                        <th>Titulo</th>
+                        <th>Descripcion</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

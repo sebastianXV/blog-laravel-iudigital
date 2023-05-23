@@ -8,7 +8,6 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-
 class PostController extends Controller
 {
     /**
@@ -17,10 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate(5);
-        /* if(!Gate::allows('index', $spots[0])){
-            abort(403);
-        }*/
-            return view('dashboard.posts.index', compact('posts'));
+        return view('dashboard.posts.index', compact('posts'));
     }
 
     /**
@@ -30,10 +26,7 @@ class PostController extends Controller
     {
         $categories = Category::pluck('title', 'id');
         $post = new Post();
-        /* if(!Gate::allows('create', $spots[0])){
-            abort(403);
-         } */
-         return view('dashboard.posts.create', compact('categories', 'post',));
+        return view('dashboard.posts.create', compact('categories', 'post'));
     }
 
     /**
@@ -43,9 +36,12 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
+            'slug' => 'required|unique:posts',
+            'description' => 'required',
             'content' => 'required',
+            'image' => 'required',
+            'posted' => 'required|in:yes,no',
             'category_id' => 'required|exists:categories,id',
-            // Otras reglas de validación
         ]);
 
         $post = Post::create($validatedData);
@@ -78,9 +74,12 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
+            'slug' => 'required|unique:posts,slug,'.$post->id,
+            'description' => 'required',
             'content' => 'required',
+            'image' => 'required',
+            'posted' => 'required|in:yes,no',
             'category_id' => 'required|exists:categories,id',
-            // Otras reglas de validación
         ]);
 
         $post->update($validatedData);
@@ -98,3 +97,4 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 }
+

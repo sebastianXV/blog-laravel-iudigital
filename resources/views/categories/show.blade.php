@@ -9,16 +9,17 @@
 
                     <div class="card-body">
                         <p>ID: {{ $category->id }}</p>
+                        <p>Slug: {{ $category->slug }}</p>
                         <!-- Otros detalles de la categoría -->
 
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-primary">Editar</a>
 
                             <form action="{{ route('categories.destroy', $category) }}" method="POST"
                                 onsubmit="return confirm('Are you sure you want to delete this category?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                         </div>
                     </div>
@@ -27,5 +28,4 @@
         </div>
     </div>
 @endsection
-
 

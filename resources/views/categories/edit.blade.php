@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Edit Category') }}</div>
 
                     <div class="card-body">
-                        <a href="{{ route('home') }}" class="btn btn-link mb-3"><i class="fa fa-arrow-left"></i> Back to Home</a>
+                        <a href="{{ route('home') }}" class="btn btn-link mb-3"><i class="fa fa-arrow-left"></i> Regresar</a>
 
                         <form action="{{ route('categories.update', $category) }}" method="POST">
                             @csrf
