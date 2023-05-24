@@ -18,13 +18,15 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->category->title }}</td>
                         <td>
-                            <a href="{{ route('posts.show', $post) }}" class="btn btn-primary">Ver</a>
-                            <a href="{{ route('posts.edit', $post) }}" class="btn btn-secondary">Editar</a>
-                            <form action="{{ route('posts.destroy', $post) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este post?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                            </form>
+                            <div class="d-flex gap-2">
+                                <a href="{{ route('posts.show', $post) }}" class="btn btn-primary">Ver</a>
+                                <a href="{{ route('posts.edit', $post) }}" class="btn btn-secondary">Editar</a>
+                                <form action="{{ route('posts.destroy', $post) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este post?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -34,5 +36,6 @@
         {{ $posts->links() }}
     </div>
 @endsection
+
 
 

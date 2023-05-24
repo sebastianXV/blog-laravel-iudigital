@@ -19,7 +19,7 @@
                                     <img src="{{ asset('img/posts.jpg') }}" class="card-img-top" alt="Imagen 1">
                                     <div class="card-body">
                                         <h5 class="card-title">Modulo de post</h5>
-                                        <p class="card-text">Crear publicaciones</p>
+                                        <p class="card-text">Mira y crea tu mejor post</p>
                                         <div class="butons">
                                             <a href="{{ route('posts.index') }}" class="btn btn-primary">Ver
                                                 Publicaciones</a>
@@ -35,7 +35,7 @@
                                     <img src="{{ asset('img/categorias.jpg') }}" class="card-img-top" alt="Imagen 2">
                                     <div class="card-body">
                                         <h5 class="card-title">Modulo de categorias</h5>
-                                        <p class="card-text">Crear categorias</p>
+                                        <p class="card-text">Mira y crea tu propia categoria</p>
                                         <div class="butons">
                                             <a href="{{ route('categories.index') }}" class="btn btn-primary">Ver
                                                 Categorías</a>

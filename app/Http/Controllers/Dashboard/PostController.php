@@ -36,18 +36,17 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:posts',
             'description' => 'required',
             'content' => 'required',
-            'image' => 'required',
             'posted' => 'required|in:yes,no',
             'category_id' => 'required|exists:categories,id',
         ]);
-
+    
         $post = Post::create($validatedData);
-
+    
         return redirect()->route('posts.show', $post->id);
     }
+    
 
     /**
      * Display the specified resource.
@@ -74,18 +73,20 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:posts,slug,'.$post->id,
             'description' => 'required',
             'content' => 'required',
-            'image' => 'required',
             'posted' => 'required|in:yes,no',
             'category_id' => 'required|exists:categories,id',
         ]);
-
+    
+        // Elimina la validación 'required' para el campo slug
+        unset($validatedData['slug']);
+    
         $post->update($validatedData);
-
+    
         return redirect()->route('posts.show', $post->id);
     }
+    
 
     /**
      * Remove the specified resource from storage.
