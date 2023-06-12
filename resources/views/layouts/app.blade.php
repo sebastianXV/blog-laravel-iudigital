@@ -42,6 +42,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
                             </li>
+
                         @endauth
                     </ul>
 
