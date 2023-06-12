@@ -1,3 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwind/components";
+@import "tailwind utilities";
+
+
+.table {
+    @apply table-auto w-full;
+}
+
+
+.table th {
+    @apply px-16 py-2 bg-gray-300 font-medium text-center uppercase border leading-4;
+}
+
+
+.table tr {
+    @apply border;
+}
+
+
+.table td {
+    @apply px-6 py-4 whitespace-normal;
+}
+
+
+.form-control {
+    @apply block rounded-md shadow-sm border-gray-300 w-full mt-1;
+}
+
+label {
+    @apply text-gray-600 text-sm mt-2 block;
+}
+
+
+.btn {
+    @apply bg-blue-500 hover: bg-blue-700 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+
+.btn-danger {
+    @apply bg-red-500 hover: bg-red-700 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+
+.btn-success {
+    @apply bg-green-600 hover: bg-green-900 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+.btn-warning {
+    @apply bg-yellow-500 hover: bg-yellow-700 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+
+.btn-info {
+    @apply bg-blue-500 hover: bg-blue-700 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+.btn-primary {
+    @apply bg-blue-500 hover: bg-blue-700 text-white font-bold py-2 px-3 rounded border inline-block transition-all;
+}
+
+.card {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+
+.card-header {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+
+.card-body {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+.card-footer {
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+
+.card-title {
+    @apply text-gray-700 text-xl font-bold mb-2;
+}

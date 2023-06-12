@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -32,8 +31,7 @@ class CategoryController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:categories,slug', // Asegura que el slug sea único en la tabla "categories"
-            // Otras reglas de validación para otros campos si es necesario
+            'slug' => 'required|unique:categories,slug', 
         ]);
 
 
@@ -67,7 +65,6 @@ class CategoryController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'slug' => 'required|unique:categories,slug,' . $category->id,
-            // Otras reglas de validación
         ]);
 
         $category->update($validatedData);

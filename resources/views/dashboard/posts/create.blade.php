@@ -41,7 +41,6 @@
                                     <option value="no">{{ __('No') }}</option>
                                 </select>
                             </div>
-                            
 
                             <div class="form-group mb-3">
                                 <label for="category">{{ __('Categoría') }}</label>
@@ -60,4 +59,5 @@
         </div>
     </div>
 @endsection
+
 
