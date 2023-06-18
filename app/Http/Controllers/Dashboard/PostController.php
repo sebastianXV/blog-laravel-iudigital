@@ -54,59 +54,9 @@ class PostController extends Controller
     
         $post = Post::create($validatedData);
     
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route('post.show', $post->id);
     }
     
-    
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post)
-    {
-        return view('dashboard.posts.show', compact('post'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Post $post)
-    {
-        $categories = Category::pluck('title', 'id');
-
-        return view('dashboard.posts.edit', compact('post', 'categories'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Post $post)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'content' => 'required',
-            'posted' => 'required|in:yes,no',
-            'category_id' => 'required|exists:categories,id',
-        ]);
-    
-        // Elimina la validación 'required' para el campo slug
-        unset($validatedData['slug']);
-    
-        $post->update($validatedData);
-    
-        return redirect()->route('posts.show', $post->id);
-    }
-    
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-
-        return redirect()->route('posts.index');
-    }
+    // Resto de los métodos...
 }
 

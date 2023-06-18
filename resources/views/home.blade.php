@@ -21,9 +21,9 @@
                                         <h5 class="card-title">Modulo de post</h5>
                                         <p class="card-text">Mira y crea tu mejor post</p>
                                         <div class="butons">
-                                            <a href="{{ route('posts.index') }}" class="btn btn-primary">Ver
+                                            <a href="{{ route('posts.index') }}" class="btn btn-primary mt-2">Ver
                                                 Publicaciones</a>
-                                            <a href="{{ route('posts.create') }}" class="btn btn-primary">Crear
+                                            <a href="{{ route('posts.create') }}" class="btn btn-primary mt-2">Crear
                                                 Publicación</a>
                                         </div>
                                     </div>
@@ -37,9 +37,9 @@
                                         <h5 class="card-title">Modulo de categorias</h5>
                                         <p class="card-text">Mira y crea tu propia categoria</p>
                                         <div class="butons">
-                                            <a href="{{ route('categories.index') }}" class="btn btn-primary">Ver
+                                            <a href="{{ route('categories.index') }}" class="btn btn-primary mt-2">Ver
                                                 Categorías</a>
-                                            <a href="{{ route('categories.create') }}" class="btn btn-primary">Crear
+                                            <a href="{{ route('categories.create') }}" class="btn btn-primary mt-2">Crear
                                                 Categoría</a>
                                         </div>
                                     </div>
